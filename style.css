@@ -157,7 +157,7 @@ p  { margin: 0 0 1.1em; }
 .book { scroll-margin-top: 5rem; }
 .book a { text-decoration: none; display: block; }
 .book img {
-  width: 100%; border: 1px solid var(--rule);
+  width: 100%; height: auto; border: 1px solid var(--rule);
   box-shadow: 0 2px 10px rgba(27,29,28,.10);
   transition: transform .22s ease, box-shadow .22s ease;
 }
@@ -401,12 +401,12 @@ p  { margin: 0 0 1.1em; }
 
 
 /* ---------- covers inside the trilogy cards ---------- */
-.tri-cover { width: 100%; border: 1px solid rgba(176,137,74,.35); margin-bottom: 1.25rem; }
+.tri-cover { width: 100%; height: auto; border: 1px solid rgba(176,137,74,.35); margin-bottom: 1.25rem; }
 .tri-card--img { padding-top: 1.25rem; }
 
 /* ---------- covers inside the fiction band ---------- */
 .void-cover {
-  width: 100%; border: 1px solid rgba(154,175,199,.25); margin-bottom: 1.25rem;
+  width: 100%; height: auto; border: 1px solid rgba(154,175,199,.25); margin-bottom: 1.25rem;
   transition: transform .22s ease;
 }
 .void-book a:hover .void-cover, .void-book a:focus-visible .void-cover { transform: translateY(-4px); }
@@ -415,7 +415,7 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- about / author ---------- */
 .about { display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr); gap: clamp(1.75rem, 4vw, 3rem); align-items: start; }
-.about-photo { width: 100%; border: 1px solid var(--rule); box-shadow: 0 3px 14px rgba(27,29,28,.12); }
+.about-photo { width: 100%; height: auto; border: 1px solid var(--rule); box-shadow: 0 3px 14px rgba(27,29,28,.12); }
 .about .pull {
   font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.4; font-weight: 600;
   color: var(--navy-deep); margin: 0 0 1.2rem;
@@ -424,7 +424,64 @@ p  { margin: 0 0 1.1em; }
   .about { grid-template-columns: 1fr; }
   .about-photo { max-width: 190px; }
 }
-.bet-cover { width: 100%; max-width: 230px; border: 1px solid rgba(224,179,106,.3); margin-bottom: 1.75rem; }
+.bet-cover { width: 100%; height: auto; max-width: 230px; border: 1px solid rgba(224,179,106,.3); margin-bottom: 1.75rem; }
 .bet-grid { display: grid; grid-template-columns: minmax(150px, 230px) minmax(0, 1fr); gap: clamp(1.75rem, 4vw, 3rem); align-items: start; }
 @media (max-width: 44rem) { .bet-grid { grid-template-columns: 1fr; } }
 .services-portrait { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--rule); margin-bottom: 1.25rem; }
+
+
+/* ---------- promo card that fills the last grid row ---------- */
+.promo {
+  background: var(--navy); color: var(--ivory);
+  border-top: 3px solid var(--gold);
+  padding: 1.4rem 1.25rem 1.25rem;
+  display: flex; flex-direction: column;
+  min-height: 0;
+  text-decoration: none;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.promo:hover, .promo:focus-visible {
+  transform: translateY(-4px); box-shadow: 0 10px 22px rgba(27,29,28,.20); outline: none;
+}
+.promo-eyebrow {
+  font-family: var(--label); text-transform: uppercase; letter-spacing: .2em;
+  font-size: .68rem; font-weight: 600; color: var(--gold); margin: 0 0 .9rem;
+}
+.promo-title { font-size: 1.05rem; font-weight: 700; line-height: 1.25; margin: 0 0 .55rem; color: #FFF; }
+.promo-text { font-size: .85rem; line-height: 1.5; color: rgba(247,243,234,.82); margin: 0 0 1.1rem; }
+.promo-cta {
+  margin-top: auto; font-family: var(--label); text-transform: uppercase;
+  letter-spacing: .16em; font-size: .74rem; font-weight: 600; color: var(--gold);
+  border-bottom: 1px solid rgba(201,162,39,.5); padding-bottom: 2px; align-self: flex-start;
+}
+.promo--sage { background: var(--sage); border-top-color: var(--gold-soft); }
+.promo--sage .promo-eyebrow, .promo--sage .promo-cta { color: #E8D9B8; }
+.promo--sage .promo-cta { border-bottom-color: rgba(232,217,184,.5); }
+
+
+/* ---------- mailing list ---------- */
+.list-block { background: var(--navy); color: var(--ivory); padding: clamp(2rem, 5vw, 3rem); }
+.list-block h2 { color: #FFF; margin-bottom: .6rem; }
+.list-block .eyebrow { color: var(--gold); }
+.list-block p { color: rgba(247,243,234,.85); max-width: 46ch; }
+.list-embed { margin-top: 1.75rem; }
+.list-embed input[type="email"] {
+  font-family: var(--display); font-size: 1rem; padding: .8rem 1rem;
+  border: 1px solid rgba(247,243,234,.35); background: rgba(255,255,255,.06);
+  color: var(--ivory); width: min(22rem, 100%); margin-right: .5rem;
+}
+.list-embed input[type="email"]::placeholder { color: rgba(247,243,234,.5); }
+.list-note { font-size: .82rem; color: rgba(247,243,234,.6); margin-top: 1rem; }
+
+
+/* ---------- free reader magnet card in the fiction band ---------- */
+.void-book--free {
+  background: rgba(154,175,199,.07);
+  border-left: 3px solid #9AAFC7;
+}
+.void-free-tag {
+  display: inline-block; font-family: var(--label); text-transform: uppercase;
+  letter-spacing: .2em; font-size: .66rem; font-weight: 600; color: #191B22;
+  background: #9AAFC7; padding: .22rem .55rem; margin-bottom: 1rem;
+}
+.void-free-text { font-size: .9rem; line-height: 1.5; color: rgba(230,233,239,.78); margin: 0 0 1.2rem; }
