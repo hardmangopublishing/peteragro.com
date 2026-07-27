@@ -139,6 +139,9 @@ p  { margin: 0 0 1.1em; }
   font-family: var(--label); font-size: .72rem; font-weight: 600;
   letter-spacing: .06em; color: var(--gold);
 }
+.spine--gold { background: var(--navy-deep); }
+.spine--gold::before, .spine--gold::after { background: var(--gold); opacity: 1; }
+.spine--gold .spine-vol { color: var(--gold); }
 .spine--sage { background: var(--sage); }
 .spine--sage::before, .spine--sage::after { background: var(--gold-soft); }
 .spine--sage .spine-vol { color: var(--gold-soft); }
@@ -149,6 +152,8 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- sections ---------- */
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--rule); }
+.section--companion { background: linear-gradient(180deg, rgba(31,58,95,.04), rgba(31,58,95,0)); }
+.section--companion .eyebrow { color: var(--gold-soft); }
 .section-head { margin-bottom: 2.5rem; }
 .section-head p { max-width: 52ch; color: var(--ink-soft); margin-bottom: 0; }
 
